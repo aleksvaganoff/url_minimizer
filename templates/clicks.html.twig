@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}URL click counter{% endblock %}
+
+{% block body %}
+<div>
+    <h1>URL click counter</h1>
+    {% if link_url is empty %}
+        <p>Enter the URL to find out how many clicks it has received.</p>
+        {{ form(form) }}
+    {% else %}
+        <p>The total number of clicks that your link has received.</p>
+        <p><strong>{{ link_url }}</strong></p>
+        <div>
+            <b>{{ link_clicks }}</b>
+        </div>
+        <p>Our tool will count each click as one hit to the long URL, even if there are multiple clicks from the same person or device.</p>
+        <p><a href="{{ path('home') }}">Create other shortened URL</a></p>
+    {% endif %}
+</div>
+{% endblock %}

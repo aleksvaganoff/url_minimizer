@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your shortened URL{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Your shortened URL</h1>
+    <div>
+        <input id="shorten_url" type="text" value="{{ url('handle_link', {hash: link_hash}) }}">
+        <div>
+            <input id="copy_button" type="button" class="copy" value="Copy URL">
+        </div>
+    </div>
+    <div class="baloon-block">
+        <div id="balloon">URL Copied</div>
+    </div>
+    <p>Long URL: <a href="{{ link_url }}" target="_blank">{{ link_url }}</a><br><br>
+        Track <a href="{{ path('link_clicks') }}?link_stats[short_url]={{ url('handle_link', {hash: link_hash}) }}">the total of clicks</a> in real-time from your shortened URL.<br>
+        Create other <a href="{{ path('home') }}"> short URL</a>.
+    </p>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/copy_url.js') }}"></script>
+{% endblock %}
