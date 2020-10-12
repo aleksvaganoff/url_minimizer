@@ -54,7 +54,7 @@ class ShortLinkController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $url = $form->getData()['short_url'];
             $hash = substr($url, -ShortLink::HASH_LENGTH);
-            $shortLink = $shortLinkRepository->findActiveByHash($hash);
+            $shortLink = $shortLinkRepository->findOneBy(['hash' => $hash]);
         }
 
         return $this->render('clicks.html.twig', [

@@ -1,0 +1,51 @@
+header #logo {
+    text-align: center;
+    padding: 40px 20px 25px;
+}
+
+header a.logo {
+    font-size: 50px;
+    font-weight: 600;
+    color: #864aff;
+    text-shadow: 0 2px 2px #ddd;
+}
+
+header a.logo:hover {
+    text-decoration: none;
+}
+
+div.container {
+    display: flex;
+    justify-content: center;
+}
+
+section.content {
+    max-width: 720px;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 1px 4px #ccc;
+    border-radius: 2px;
+    padding: 10px 30px 5px;
+    background: #f9f9f9;
+}
+
+#link_details .balloon {
+    display: none;
+    background: #333;
+    font: 13px asap, arial;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    border-radius: 3px;
+    white-space: nowrap;
+    float: right;
+    margin: 4px 0;
+}
+
+#link_stats .click-amount {
+    display: inline-block;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 3px;
+    font-size: 55px;
+    margin-bottom: 1rem;
+}

@@ -35,7 +35,7 @@ class LinkStatsType extends AbstractType
                     new NotBlank(),
                     new Callback(['callback' => function ($value, ExecutionContextInterface $context) {
                         $hash = substr($value, -6);
-                        $shortLink = $this->shortLinkReposytory->findActiveByHash($hash);
+                        $shortLink = $this->shortLinkReposytory->findOneBy(['hash' => $hash]);
                         if (!$shortLink) {
                             $context->buildViolation("The URL doesn't exist")
                                 ->atPath('short_url')
